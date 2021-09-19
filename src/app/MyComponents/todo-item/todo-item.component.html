@@ -1,0 +1,27 @@
+<div class="container my-3 ml-1 " >
+
+    <h5 [ngClass]="{'strike': !todo.active}">{{todo.title}}</h5>
+    <p>{{todo.desc}}</p>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input"  [(ngModel)]="exampleCheck1" id="exampleCheck1"  (click)="onCheckboxClick(todo)" 
+        [checked]="!todo.active">
+        <label class="form-check-label"  for="todo{{i}}"  *ngIf="todo.active===false; else elseBlock">Done</label>
+        <ng-template #elseBlock>
+        <label class="form-check-label"  for="todo{{i}}">Not DOne</label>
+      </ng-template>
+      </div>
+    <button class="btn btn-sm btn-danger" (click)="onClick(todo)" >{{demo}}</button>
+</div>
+
+<!-- if else condition
+<div class="container my-3 ml-1 " >
+
+  
+  
+  <div *ngIf="demo==='hello world'; else elseBlock"><h5 >{{todo.title}}</h5></div>
+  <ng-template #elseBlock>
+    <p>{{demo}}</p>
+</ng-template>
+</div> -->
+
+    <!-- <h1>{{demo}}</h1> -->
